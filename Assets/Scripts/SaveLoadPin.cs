@@ -24,11 +24,11 @@ namespace Assets.Scripts
 		{
 			path = Path.Combine(Application.persistentDataPath, "pins.json");
 
-			saveButton.onClick.AddListener(() => { var _ = Save(); });
-			loadButton.onClick.AddListener(() => { var _ = Load(); });
+			saveButton.onClick.AddListener(() => { var _ = SaveAsync(); });
+			loadButton.onClick.AddListener(() => { var _ = LoadAsync(); });
 		}
 
-		private async Task Save()
+		private async Task SaveAsync()
 		{
 			pinData.Clear();
 			taggedObjectsPin = GameObject.FindGameObjectsWithTag("Pin");
@@ -63,7 +63,7 @@ namespace Assets.Scripts
 
 		}
 
-		private async Task Load()
+		private async Task LoadAsync()
 		{
 			taggedObjectsPin = GameObject.FindGameObjectsWithTag("Pin");
 
